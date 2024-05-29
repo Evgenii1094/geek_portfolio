@@ -1,0 +1,96 @@
+.join-team {
+    &__wrapper {
+        display: grid;
+        gap: 0 30px;
+        grid-template-columns: 555px 471px;
+
+        @include tablet {
+            gap: 0;
+            grid-template-columns: 340px 471px;
+        }
+
+        @include mobile {
+            gap: 40px 0;
+            grid-template-columns: auto;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px 0;
+
+        @include sm-mobile {
+            max-width: 320px;
+        }
+    }
+
+    &__content-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0;
+    }
+
+    &__title {
+        @include font(var(--typo-1), 30px, var(--fw-black));
+        color: var(--color-red);
+        text-transform: uppercase;
+
+        @include mobile {
+            font-size: 24px;
+        }
+    }
+
+    &__paragraph {
+        @include font(var(--typo-1), 18px, var(--fw-normal));
+        color: var(--color-dark-blue);
+    }
+
+    &__info {
+        @include size(482px, 593px);
+        align-items: flex-end;
+        background: {
+            image: url("../../img/join-team-bg.svg");
+            repeat: no-repeat;
+            size: contain;
+        };
+        display: flex;
+        justify-content: flex-end;
+
+        @include mobile {
+            @include size(428px, 539px);
+        }
+
+        @include sm-mobile {
+            transform: translateX(-45px);
+        }
+    }
+
+    &__info-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0;
+        padding: 0 135px 80px 0;
+    }
+
+    &__info-title {
+        @include font(var(--typo-1), 18px, var(--fw-normal));
+        color: $color-white;
+    }
+
+    &__info-link,
+    &__info-text {
+        @include font(var(--typo-1), 24px, var(--fw-black));
+        color: $color-white;
+
+        @include mobile {
+            font-size: 20px;
+        }
+    }
+
+    &__info-link {
+        @include on-event {
+            text-decoration: underline;
+        }
+    }
+}

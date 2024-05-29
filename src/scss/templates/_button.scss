@@ -1,0 +1,70 @@
+.btn {
+    @include font(var(--typo-1), 16px, var(--fw-black));
+    @include trs;
+    align-items: center;
+    background-color: var(--color-orange);
+    border: 1px solid var(--color-orange);
+    border-radius: 6px;
+    color: $color-white;
+    display: inline-flex;
+    justify-content: center;
+    padding: 20px 40px;
+    position: relative;
+    text-decoration: none;
+    text-transform: capitalize;
+    width: max-content;
+
+    svg {
+        path {
+            @include trs();
+        }
+    }
+
+    @include on-event {
+        @include trs();
+        background-color: transparent;
+        color: var(--color-orange);
+    }
+
+    &.is-transparent {
+        background-color: transparent;
+        color: var(--color-orange);
+
+        @include on-event {
+            background-color: var(--color-orange);
+            color: $color-white;
+
+            svg {
+                path {
+                    fill: $color-white;
+                }
+            }
+        }
+    }
+
+    &.is-link {
+        border: none;
+        background-color: transparent;
+        color: var(--color-orange);
+        font-weight: var(--fw-extrabold);
+        padding: 0;
+        text-decoration: underline;
+
+        @include on-event {
+            background-color: transparent;
+            border: none;
+            color: var(--color-orange);
+            text-decoration: none;
+        }
+    }
+
+    &.is-inverted {
+        border-color: $color-white;
+        color: $color-white;
+
+        @include on-event {
+            background-color: $color-white;
+            color: var(--color-orange);
+        }
+    }
+}

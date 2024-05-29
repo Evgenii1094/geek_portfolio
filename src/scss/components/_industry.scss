@@ -1,0 +1,144 @@
+.industry {
+    &__slider {
+        position: relative;
+
+        @include tablet {
+            margin: 0 auto;
+            width: 688px;
+        }
+
+        @include mobile {
+            width: 320px;
+        }
+    }
+
+    &__slider-container {
+        position: relative;
+        display: flex;
+        overflow-x: hidden;
+        margin: 0 auto;
+        width: 1140px;
+        gap: 0 30px;
+
+        @include tablet {
+            width: 688px;
+        }
+
+        @include mobile {
+            width: 320px;
+        }
+    }
+
+    &__slider-item {
+        @include flex-v-center;
+        background-color: $color-white;
+        border: 2px solid var(--color-stroke);
+        border-radius: 25px;
+        flex-direction: column;
+        gap: 24px 0;
+        min-height: 300px;
+        padding: 30px;
+    }
+
+    &__picture {
+        @include flex-all-center;
+        min-height: 80px;
+    }
+
+    &__paragraph {
+        @include font(var(--typo-1), 18px, var(--fw-normal));
+        color: var(--color-dark-blue);
+        text-align: center;
+    }
+
+    &__group {
+        @include absolute(null, null, 30px, 50%);
+        @include flex-v-center;
+        gap: 0 5px;
+        transform: translateX(-50%);
+        width: max-content;
+    }
+
+    &__icon {
+        @include flex-all-center;
+    }
+
+    &__link {
+        @include font(var(--typo-1), 16px, var(--fw-black));
+        color: var(--color-blue);
+    }
+
+    &__button-next,
+    &__button-prev {
+        @include trs();
+        @include size(40px);
+        border-radius: 50%;
+
+        @include mobile {
+            bottom: -55px;
+            top: auto;
+            transform: none;
+        }
+
+        @include on-event {
+            background-color: var(--color-red);
+
+            svg {
+                path {
+                    fill: $color-white;
+                }
+            }
+        }
+
+        &::after {
+            content: none;
+        }
+    }
+
+    &__button-next {
+        right: -60px;
+
+        @include tablet {
+            right: -40px;
+        }
+
+        @include mobile {
+            right: 40px;
+        }
+    }
+
+    &__button-prev {
+        left: -60px;
+
+        @include tablet {
+            left: -40px;
+        }
+
+        @include mobile {
+            left: 40px;
+        }
+    }
+
+    &__swiper-pagination {
+        display: none;
+
+        @include mobile {
+            bottom: -40px !important;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .swiper-pagination-bullet {
+        @include size(8px);
+        background-color: var(--color-disactive);
+        border-radius: 50%;
+        margin: 0 5px !important;
+        opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: var(--color-red);
+        opacity: 1;
+    }
+}

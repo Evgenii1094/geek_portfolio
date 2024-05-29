@@ -1,0 +1,26 @@
+.seo-blog {
+    &__wrapper {
+        display: grid;
+        gap: 0 30px;
+        grid-template-columns: 750px 360px;
+
+        @include tablet {
+            grid-template-columns: minmax(400px, 750px) 260px;
+        }
+
+        @include mobile {
+            grid-template-columns: auto;
+            gap: 40px 0;
+        }
+    }
+
+    &__sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 60px 0;
+
+        @include tablet {
+            gap: 40px 0;
+        }
+    }
+}

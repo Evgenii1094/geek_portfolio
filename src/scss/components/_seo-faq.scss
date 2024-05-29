@@ -1,0 +1,100 @@
+.seo-faq {
+    $this: &;
+
+    .title {
+        margin-bottom: 20px;
+
+        &__text {
+            color: var(--color-blue);
+        }
+    }
+
+    &__inner {
+        border-radius: 12px;
+        border: 4px solid var(--color-blue);
+        padding: 40px;
+
+        @include mobile {
+            padding: 40px 30px;
+        }
+    }
+
+    &__wrapper {
+        border-bottom: 1px solid var(--color-stroke);
+    }
+
+    &__group {
+        @include trs();
+        @include flex-v-center;
+        cursor: pointer;
+        gap: 0 30px;
+        justify-content: space-between;
+        padding: 25px 30px;
+        position: relative;
+        z-index: 2;
+
+        @include mobile {
+            gap: 0 10px;
+            padding: 25px 0;
+        }
+    }
+
+    &__icon {
+        @include size(25px);
+        display: flex;
+        flex-shrink: 0;
+        position: relative;
+
+        &::before {
+            @include absolute(50%, null, null, 50%);
+            @include size(25px);
+            @include trs();
+            background: {
+                image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='26' viewBox='0 0 25 26' fill='none'%3E%3Crect x='14' y='0.5' width='25' height='3' transform='rotate(90 14 0.5)' fill='%23023965'/%3E%3Crect y='11.5' width='25' height='3' fill='%23023965'/%3E%3C/svg%3E");
+                repeat: no-repeat;
+            };
+            content: '';
+            transform: translate(-50%, -50%);
+        }
+
+        .is-open & {
+            &::before {
+                background-image: url("data:image/svg+xml,%3Csvg width='25' height='26' viewBox='0 0 25 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='+'%3E%3Crect id='span.line_2' y='11.5' width='25' height='3' fill='%23023965'/%3E%3C/g%3E%3C/svg%3E%0A");
+                transform: translate(-50%, -50%) scale(1, -1);
+            }
+        }
+    }
+
+    &__question {
+        @include trs;
+        @include font(var(--typo-1), 18px, var(--fw-black));
+        color: var(--color-dark-blue);
+        position: relative;
+        z-index: 1;
+
+        @include on-event {
+            color: var(--color-blue);
+        }
+    }
+
+    &__answer {
+        @include font(var(--typo-1), 15px, var(--fw-normal));
+        @include trs();
+        color: var(--color-dark-blue);
+        max-height: 0;
+        opacity: 0;
+
+        .is-open & {
+            opacity: 1;
+            overflow: visible;
+        }
+    }
+
+    &__answer-inner {
+        padding: 0 0 20px 30px;
+
+        @include mobile {
+            padding-left: 0;
+        }
+    }
+}

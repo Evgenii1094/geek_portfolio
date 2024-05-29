@@ -1,0 +1,31 @@
+.go-to-top {
+    @include trs;
+    @include fixed(null, 25px, 100px, null);
+    @include size(45px);
+    align-items: center;
+    background-color: transparent;
+    border: 3px solid var(--color-purple);
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    outline: 0;
+    z-index: 1;
+
+    @include mobile {
+        right: 15px;
+    }
+
+    @include on-event{
+        background-color: var(--color-purple);
+
+        svg {
+            fill: $color-white;
+        }
+    }
+
+    svg {
+        @include size(18px);
+        fill: var(--color-purple);
+    }
+}

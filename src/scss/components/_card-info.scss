@@ -1,0 +1,122 @@
+.card-info {
+    $this: &;
+
+    &.is-reverse {
+        .title {
+            max-width: 525px;
+        }
+
+        #{$this} {
+            &__wrapper {
+                padding: 100px 100px 100px 488px;
+
+                @include tablet {
+                    padding: 435px 68px 100px;
+                }
+
+                @include mobile {
+                    padding: 340px 0 100px;
+                }
+
+                &::after {
+                    @include absolute(auto, 0, 0, null);
+                    @include size(305px, 277px);
+                    background: {
+                        image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='305' height='277' viewBox='0 0 305 277' fill='none'%3E%3Cpath d='M0 276.93H305V0.930176C273.922 0.930176 233.654 28.6268 220.8 77.9267C204.719 139.601 200.563 160.572 161.715 202.424C126.3 240.577 39.1489 268.375 0 276.93Z' fill='%23FF6896'/%3E%3C/svg%3E");
+                        repeat: no-repeat;
+                        size: contain;
+                    };
+                    content: '';
+                    z-index: -1;
+
+                    @include mobile {
+                        @include size(320px, 185px);
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='185' viewBox='0 0 320 185' fill='none'%3E%3Cpath d='M0 185H320V0C287.393 0 245.146 18.5647 231.659 51.61C214.787 92.9493 210.427 107.006 169.668 135.059C132.512 160.633 41.0743 179.266 0 185Z' fill='%23FF6896'/%3E%3C/svg%3E");;
+                    }
+                }
+
+                &::before {
+                    @include absolute(0, null, auto, 0);
+                    @include size(430px, 442px);
+                    background: {
+                        image: url("../../img/card-info-2.png");
+                        repeat: no-repeat;
+                        size: contain;
+                    };
+                    content: '';
+
+                    @include mobile {
+                        @include size(320px, 329px);
+                    }
+                }
+            }
+        }
+    }
+
+    .title {
+        max-width: 455px;
+        margin-bottom: 0;
+        text-align: left;
+
+        @include tablet {
+            text-align: center;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px 0;
+        padding: 100px 0 100px 195px;
+        position: relative;
+
+        @include tablet {
+            align-items: center;
+            padding: 435px 115px 100px;
+        }
+
+        @include mobile {
+            padding: 305px 0 100px;
+        }
+
+        &::after {
+            @include absolute(0, -20px);
+            @include size(478px, 396px);
+            background: {
+                image: url("../../img/card-info-1.png");
+                repeat: no-repeat;
+                size: contain;
+            };
+            content: '';
+
+            @include mobile {
+                @include size(344px, 285px);
+            }
+        }
+
+        &::before {
+            @include absolute(null, null, 0, 0);
+            @include size(305px, 277px);
+            background: {
+                image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='305' height='277' viewBox='0 0 305 277' fill='none'%3E%3Cpath d='M305 276.93H0V0.930176C31.0782 0.930176 71.3455 28.6268 84.2002 77.9267C100.281 139.601 104.437 160.572 143.285 202.424C178.7 240.577 265.851 268.375 305 276.93Z' fill='%2358CAFF'/%3E%3C/svg%3E");
+                repeat: no-repeat;
+                size: contain;
+            };
+            content: '';
+
+            @include mobile {
+                @include size(320px, 185px);
+            }
+        }
+    }
+
+    &__buttons {
+        @include flex-v-center;
+        gap: 0 30px;
+
+        @include tablet {
+            flex-direction: column;
+            gap: 30px 0;
+        }
+    }
+}

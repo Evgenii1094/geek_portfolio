@@ -1,0 +1,54 @@
+.brands {
+    &__wrapper {
+        @include flex-all-center;
+        border-bottom: 6px solid var(--color-line);
+        border-top: 6px solid var(--color-line);
+        position: relative;
+        flex-direction: column;
+        padding: 60px 0;
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        @include desktop {
+            gap: 0 75px;
+        }
+
+        @include tablet {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            gap: 40px 0;
+        }
+    }
+
+    &__logo {
+        img {
+            @include mobile {
+                margin: 0 auto;
+                max-width: 80%;
+            }
+        }
+    }
+
+    &__title {
+        @include font(var(--typo-1), 18px, var(--fw-normal));
+        color: var(--color-dark-blue);
+        margin-bottom: 20px;
+    }
+
+    &__category {
+        @include font(var(--typo-1), 24px, var(--fw-black));
+        color: var(--color-purple);
+        margin-top: 40px;
+        text-align: center;
+    }
+}

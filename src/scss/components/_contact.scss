@@ -1,0 +1,99 @@
+.contact {
+    margin-top: 120px;
+
+    @include tablet {
+        margin-top: 60px;
+    }
+
+    .title {
+        margin-bottom: 40px;
+        max-width: 555px;
+        text-align: left;
+
+        @include mobile {
+            max-width: 250px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 60px 0;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0;
+    }
+
+    &__item {
+        @include flex-v-center;
+        gap: 0 30px;
+    }
+
+    &__info-text,
+    &__info-link {
+        @include font(var(--typo-1), 24px, var(--fw-black));
+        color: var(--color-purple);
+
+        @include mobile {
+            font-size: 20px;
+        }
+    }
+
+    &__info-link {
+        &.is-inverted {
+            color: $color-white;
+        }
+
+        @include on-event {
+            text-decoration: underline;
+        }
+    }
+
+    &__content {
+        @include size(516px, 636px);
+        background: {
+            image: url("../../img/contact-bg-link.png");
+            repeat: no-repeat;
+            size: cover;
+        }
+        align-items: flex-end;
+        display: flex;
+
+        @include mobile {
+            @include size(436px, 538px);
+            transform: translateX(-75px);
+        }
+    }
+
+    &__inner {
+        box-sizing: content-box;
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0;
+        padding: 0 0 80px 83px;
+        width: 348px;
+    }
+
+    &__content-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 10px 0;
+    }
+
+    &__title {
+        @include font(var(--typo-1), 18px, var(--fw-black));
+        color: $color-white;
+    }
+
+    &__subtitle {
+        @include font(var(--typo-1), 18px, var(--fw-normal));
+        color: $color-white;
+
+        @include mobile {
+            font-size: 13px;
+        }
+    }
+}

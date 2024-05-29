@@ -1,0 +1,15 @@
+.section {
+    margin: 160px 0;
+
+    @include desktop {
+        margin: 140px 0;
+    }
+
+    @include tablet {
+        margin: 120px 0;
+    }
+
+    @include mobile {
+        margin: 100px 0;
+    }
+}

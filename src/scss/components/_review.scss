@@ -1,0 +1,113 @@
+.review {
+    margin: 60px 0 225px;
+
+    @include tablet {
+        margin-bottom: 185px;
+    }
+
+    @include mobile {
+        margin: 40px 0 165px;
+    }
+
+    &__slider {
+        position: relative;
+    }
+
+    &__slider-container {
+        display: flex;
+        gap: 0 20px;
+        margin: 0 auto;
+        overflow-x: hidden;
+        position: relative;
+        width: 750px;
+
+        @include tablet {
+            width: 688px;
+        }
+
+        @include mobile {
+            width: 320px;
+        }
+    }
+
+    &__slider-item {
+        @include flex-v-center;
+        background: #f8f8f8;
+        border-radius: 10px;
+        flex-direction: column;
+        gap: 35px 0;
+        padding: 45px 120px 35px;
+        width: 750px;
+
+        @include tablet {
+            width: 688px;
+        }
+
+        @include mobile {
+            padding: 45px 30px 35px;
+            width: 320px;
+        }
+    }
+
+    &__wrap {
+        @include flex-v-center;
+        flex-direction: column;
+        gap: 18px 0;
+    }
+
+    &__icon {
+        @include size(32px, 25px);
+    }
+
+    &__descr {
+        @include font(var(--typo-1), 18px, var(--fw-normal));
+        color: var(--color-purple);
+        text-align: center;
+    }
+
+    &__name {
+        @include font(var(--typo-1), 15px, var(--fw-black));
+        color: var(--color-purple);
+    }
+
+    &__button-group {
+        @include absolute(null, null, -50px, 50%);
+        transform: translateX(-50%);
+    }
+
+    &__button-next,
+    &__button-prev {
+        @include trs();
+        @include size(36px);
+        border: 1px solid var(--color-blue);
+        border-radius: 50%;
+        transform: none;
+
+        @include on-event {
+            background-color: var(--color-red);
+            border-color: var(--color-red);
+
+            svg {
+                path {
+                    stroke: $color-white;
+                }
+
+                circle {
+                    stroke: var(--color-red);
+                }
+            }
+        }
+
+        &::after {
+            content: none;
+        }
+    }
+
+    &__button-next {
+        right: -60px;
+    }
+
+    &__button-prev {
+        left: -60px;
+    }
+}

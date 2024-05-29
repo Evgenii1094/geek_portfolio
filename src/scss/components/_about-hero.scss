@@ -1,0 +1,112 @@
+.about-hero {
+    margin-top: 120px;
+
+    @include tablet {
+        margin-top: 60px;
+    }
+
+    .title {
+        text-align: left;
+    }
+
+    &__wrapper {
+        align-items: flex-end;
+        display: grid;
+        gap: 0 62px;
+        grid-template-columns: 428px 739px;
+
+        @include tablet {
+            gap: 60px 0;
+            grid-template-columns: auto;
+        }
+
+        @include mobile {
+            gap: 80px 0;
+        }
+    }
+
+    &__link {
+        font-size: 30px;
+
+        @include mobile {
+            font-size: 24px;
+        }
+    }
+
+    &__picture {
+        @include size(739px, 591px);
+        background: {
+            image: url("../../img/about-pool.svg");
+            repeat: no-repeat;
+            size: contain;
+        };
+        position: relative;
+
+        @include tablet {
+            @include size(688px, 550px);
+        }
+
+        @include mobile {
+            @include size(320px, 272px);
+            transform: translateX(30px);
+        }
+    }
+
+    &__info {
+        @include absolute(70px, null, null, 65px);
+        max-width: 193px;
+        text-align: center;
+
+        @include mobile {
+            max-width: 105px;
+            left: 5px;
+            top: 10px;
+        }
+
+        &::after {
+            @include absolute(null, -10px, -60px, null);
+            @include size(60px);
+            background-color: var(--color-red);
+            content: '';
+            transform: rotate(80deg);
+            z-index: -1;
+
+            @include mobile {
+                @include size(32px);
+                bottom: -30px;
+            }
+        }
+
+        &::before {
+            @include absolute(50%, null, null, 50%);
+            @include size(250px);
+            background-color: var(--color-red);
+            border-radius: 50%;
+            content: '';
+            transform: translate(-50%, -50%);
+            z-index: -1;
+
+            @include mobile {
+                @include size(136px);
+            }
+        }
+    }
+
+    &__name {
+        @include font(var(--typo-1), 20px, var(--fw-normal));
+        color: $color-white;
+
+        @include mobile {
+            font-size: 12px;
+        }
+    }
+
+    &__descr {
+        @include font(var(--typo-1), 14px, var(--fw-normal));
+        color: $color-white;
+
+        @include mobile {
+            font-size: 8px;
+        }
+    }
+}

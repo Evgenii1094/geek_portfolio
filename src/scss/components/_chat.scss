@@ -1,0 +1,39 @@
+.chat {
+    @include fixed(null, 20px, 20px, null);
+    @include size(60px);
+    @include trs;
+    background-color: var(--color-purple);
+    border-radius: 12px;
+    z-index: 2;
+
+    @include mobile {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    @include on-event {
+        background-color: var(--color-dark-blue);
+    }
+
+    &__icon {
+        &::before {
+            @include absolute(50%, null, null, 50%);
+            @include size(30px);
+            background: {
+                image: url("../../img/chat.svg");
+                repeat: no-repeat;
+                size: cover;
+            };
+            content: '';
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__active {
+        @include absolute(-5px, -5px);
+        @include size(15px);
+        background-color: var(--color-red);
+        border-radius: 50%;
+        display: block;
+    }
+}

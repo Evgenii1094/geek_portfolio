@@ -1,0 +1,63 @@
+// base
+@import "config";
+@import "mixins";
+@import "fonts";
+
+// templates
+@import "./templates/container";
+@import "./templates/button";
+@import "./templates/section";
+@import "./templates/title";
+@import "./templates/paragraph";
+@import "./templates/item-title";
+@import "./templates/site-wrapper";
+@import "templates/auxiliary";
+
+// index.html
+@import "./components/header";
+@import "./components/header-nav";
+@import "./components/dropdown-menu";
+@import "./components/hero";
+@import "./components/calculator";
+@import "./components/brands";
+@import "./components/benefit";
+@import "./components/experts";
+@import "./components/advantage";
+@import "./components/testimonials";
+@import "./components/steps";
+@import "./components/types";
+@import "./components/discipline";
+@import "./components/seo-text";
+@import "./components/faq";
+@import "./components/footer";
+@import "./components/chat";
+@import "./components/go-to-top";
+
+// seo-page.html
+@import "./components/card-info";
+@import "./components/price";
+@import "./components/seo-blog";
+@import "./components/blog";
+@import "./components/seo-advantage";
+@import "./components/seo-review";
+@import "./components/seo-discipline";
+@import "./components/seo-faq";
+
+// contact-page.html
+@import "./components/contact";
+
+// about-page.html
+@import "./components/about-hero";
+@import "./components/industry";
+@import "./components/history";
+@import "./components/team";
+@import "./components/join-team";
+
+// price-page.html
+@import "./components/review";
+@import "./components/price-benefit";
+
+// top-page.html
+@import "./components/hero-top";
+@import "./components/steps-top";
+@import "./components/banner-top";

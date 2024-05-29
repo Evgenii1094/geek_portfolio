@@ -1,0 +1,172 @@
+.types {
+    position: relative;
+
+    &__container {
+        padding: 100px 0;
+
+        @include tablet {
+            padding: 100px 40px;
+        }
+
+        @include mobile {
+            padding: 80px 20px;
+        }
+
+        &::after {
+            @include absolute(0, null, null, 0);
+            @include size(100%, 6px);
+            background-color: var(--color-line);
+            content: '';
+
+            @include tablet {
+                left: 50%;
+                transform: translateX(-50%);
+                width: calc(100% - 80px);
+            }
+
+            @include mobile {
+                width: calc(100% - 40px);
+            }
+        }
+
+        &::before {
+            @include absolute(null, null, 0, 0);
+            @include size(100%, 6px);
+            background-color: var(--color-line);
+            content: '';
+
+            @include tablet {
+                left: 50%;
+                transform: translateX(-50%);
+                width: calc(100% - 80px);
+            }
+
+            @include mobile {
+                width: calc(100% - 40px);
+            }
+        }
+    }
+
+    &__list {
+        display: grid;
+        gap: 0 30px;
+        grid-template-columns: repeat(4, 270px);
+        justify-content: center;
+
+        @include tablet {
+            grid-template-columns: repeat(4, 138px);
+        }
+
+        @include mobile {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            grid-template-columns: auto;
+        }
+    }
+
+    &__link {
+        @include trs;
+        @include flex-all-center;
+        @include font(var(--typo-1), 24px, var(--fw-black));
+        color: var(--color-disactive);
+        cursor: pointer;
+        min-height: 105px;
+        position: relative;
+        text-align: center;
+        word-break: break-word;
+
+        @include tablet {
+            font-size: 20px;
+            min-height: 80px;
+        }
+
+        @include mobile {
+            min-height: auto;
+        }
+
+        &.is-active {
+            color: $color-white;
+
+            &::before {
+                @include absolute(50%, null, null, 50%);
+                @include size(240px, 109px);
+                background: {
+                    image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='109' viewBox='0 0 240 109' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M224.648 80.1056C191.118 112.262 131.752 113.794 87.8483 101.988C60.8327 94.7169 -10.2246 74.5257 1.241 33.3576C12.0669 -5.51294 75.0934 35.9038 142.962 10.4809C239.303 -25.6146 258.179 47.9489 224.648 80.1056Z' fill='%23FF6893'/%3E%3C/svg%3E");
+                    repeat: no-repeat;
+                    size: cover;
+                };
+                content: '';
+                transform: translate(-50%, -50%);
+                z-index: -1;
+
+                @include tablet {
+                    @include size(179px, 80px);
+                }
+
+                @include mobile {
+                    content: none;
+                }
+            }
+
+            @include mobile {
+                color: var(--color-red);
+            }
+        }
+    }
+
+    &__inner {
+        position: relative;
+        min-height: 300px;
+
+        @include mobile {
+            min-height: 325px;
+        }
+    }
+
+    &__content {
+        @include absolute(45px, null, null, 50%);
+        @include flex-v-center;
+        @include trs();
+        gap: 40px 0;
+        flex-direction: column;
+        text-align: center;
+        transform: translateX(-50%);
+        width: 555px;
+
+        @include mobile {
+            width: 100%;
+        }
+
+        &.is-hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &.is-show {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px 0;
+    }
+
+    &__title {
+        @include font(var(--typo-1), 30px, var(--fw-black));
+        color: var(--color-red);
+        text-transform: uppercase;
+
+        @include mobile {
+            font-size: 24px;
+        }
+    }
+
+    &__descr {
+        @include font(var(--typo-1), 15px, var(--fw-black));
+        color: var(--color-dark-blue);
+    }
+}

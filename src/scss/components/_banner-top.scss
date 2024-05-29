@@ -1,0 +1,36 @@
+.banner-top {
+    margin-bottom: 0;
+    padding-bottom: 77px;
+    position: relative;
+
+    &::before {
+        @include absolute(null, null, 0, 50%);
+        @include size(1920px, 608px);
+        background: {
+            image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='608' viewBox='0 0 1920 608' fill='none'%3E%3Cpath d='M0 204.273C493.5 204.273 922 -146.424 1920 71.1975V608H0V204.273Z' fill='%2358CAFF'/%3E%3C/svg%3E");
+            repeat: no-repeat;
+            size: cover;
+        };
+        content: '';
+        transform: translateX(-50%);
+    }
+
+    &__wrapper {
+        @include flex-all-center;
+        flex-direction: column;
+        gap: 35px 0;
+        margin: 0 auto;
+        max-width: 360px;
+    }
+
+    .title {
+        margin-bottom: 0;
+    }
+
+    &__button {
+        @include on-event {
+            border-color: $color-white;
+            color: $color-white;
+        }
+    }
+}

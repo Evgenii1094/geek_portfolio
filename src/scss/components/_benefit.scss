@@ -1,0 +1,32 @@
+.benefit {
+    .title {
+        max-width: 455px;
+        text-align: left;
+
+        @include mobile {
+            margin: 0 auto 40px;
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        gap: 0 30px;
+        grid-template-columns: repeat(3, minmax(210px, 360px));
+        justify-content: center;
+
+        @include mobile {
+            gap: 40px 30px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 360px));
+        }
+    }
+
+    &__icon {
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        border-bottom: 6px solid var(--color-blue);
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+}

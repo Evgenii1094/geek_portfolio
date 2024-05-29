@@ -1,0 +1,49 @@
+.title {
+    $this: &;
+
+    display: flex;
+    gap: 20px 0;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 60px;
+    text-align: center;
+
+    @include mobile {
+        margin-bottom: 40px;
+    }
+
+    &.is-inverted {
+        #{$this} {
+            &__text,
+            &__text-small {
+                color: $color-white;
+            }
+        }
+    }
+
+    &.is-primary  {
+        #{$this}__text {
+            font-size: 76px;
+
+            @include mobile {
+                font-size: 46px;
+            }
+        }
+    }
+
+    &__text {
+        @include font(var(--typo-1), 40px, var(--fw-black));
+        color: var(--color-purple);
+        line-height: normal;
+        text-transform: capitalize;
+
+        @include mobile {
+          font-size: 32px;
+        }
+    }
+
+    &__text-small {
+        @include font(var(--typo-1), 18px, var(--fw-normal));
+        color: var(--color-dark-blue);
+    }
+}

@@ -1,0 +1,74 @@
+.blog {
+    position: relative;
+
+    &::before {
+        @include absolute(null, null, -1px, 0);
+        @include size(100%, 100px);
+        background: linear-gradient(0deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+        content: '';
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px 0;
+        max-height: 1365px;
+        padding-right: 30px;
+        overflow-y: auto;
+
+        @include mobile {
+            max-height: 640px;
+            padding-right: 10px;
+        }
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--color-grey);
+            height: 30px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: $color-white;
+        }
+    }
+
+    h2 {
+        @include font(var(--typo-1), 40px, var(--fw-black));
+        color: var(--color-purple);
+        margin-bottom: 40px;
+
+        @include mobile {
+            font-size: 32px;
+        }
+    }
+
+    h3 {
+        @include font(var(--typo-1), 24px, var(--fw-black));
+        color: var(--color-purple);
+        margin-bottom: 20px;
+
+        @include mobile {
+            font-size: 20px;
+        }
+    }
+
+    h4 {
+        @include font(var(--typo-1), 18px, var(--fw-black));
+        color: var(--color-purple);
+        margin-bottom: 20px;
+    }
+
+    &__paragraph {
+        @include font(var(--typo-1), 15px, var(--fw-normal));
+        color: var(--color-dark-blue);
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}

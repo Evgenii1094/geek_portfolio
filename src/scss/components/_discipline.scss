@@ -1,0 +1,245 @@
+.discipline {
+    margin-top: 220px;
+
+    @include tablet {
+        margin: 120px 0;
+    }
+
+    @include mobile {
+        margin: 100px 0;
+    }
+
+    &__wrapper {
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            gap: 60px 0;
+        }
+
+        @include mobile {
+            gap: 100px 0;
+        }
+    }
+
+    &__inner {
+        position: relative;
+        margin-top: 410px;
+        min-height: 260px;
+
+        @include tablet {
+            margin-top: 0;
+            min-height: 350px;
+        }
+
+        @include mobile {
+            min-height: 540px;
+        }
+    }
+
+    &__list {
+        display: flex;
+
+        @include tablet {
+            display: grid;
+            gap: 0 30px;
+            grid-template-columns: repeat(5, 114px);
+            justify-content: center;
+        }
+
+        @include mobile {
+            gap: 0 21px;
+            grid-template-columns: repeat(5, 47px);
+        }
+    }
+
+    &__link {
+        @include trs;
+        @include flex-all-center;
+        cursor: pointer;
+        gap: 10px 0;
+        flex-direction: column;
+        opacity: 0.3;
+        text-align: center;
+        z-index: 1;
+
+        &:nth-child(1) {
+            @include absolute(null, null, -40px, 410px);
+
+            @include tablet {
+                @include reset-position;
+            }
+        }
+
+        &:nth-child(2) {
+            @include absolute(null, null, 120px, 140px);
+
+            @include tablet {
+                @include reset-position;
+            }
+        }
+
+        &:nth-child(3) {
+            @include absolute(50px, null, null, 160px);
+
+            @include tablet {
+                @include reset-position;
+            }
+        }
+
+        &:nth-child(4) {
+            @include absolute(-100px, null, null, 440px);
+
+            @include tablet {
+                @include reset-position;
+            }
+        }
+
+        &:nth-child(5) {
+            @include absolute(50px, 160px);
+
+            @include tablet {
+                @include reset-position;
+            }
+        }
+
+        img {
+            pointer-events: none;
+        }
+
+        &.is-active {
+            opacity: 1;
+        }
+    }
+
+    &__tab {
+        @include font(var(--typo-1), 18px, var(--fw-black));
+        color: var(--color-grey);
+        pointer-events: none;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__content {
+        @include trs;
+        @include absolute(null, 0, 0, null);
+
+        @include tablet {
+            align-items: center;
+            bottom: auto;
+            display: grid;
+            gap: 0 170px;
+            grid-template-columns: 183px 323px;
+            justify-content: center;
+            left: 50%;
+            right: auto;
+            top: 0;
+            transform: translateX(-50%);
+        }
+
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            gap: 170px 0;
+            grid-template-columns: auto;
+        }
+
+        @include sm-mobile {
+            width: 100%;
+        }
+
+        &.is-hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &.is-show {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__picture {
+        @include absolute(-220px, null, null, -325px);
+        display: flex;
+        justify-content: center;
+        width: 264px;
+
+        @include tablet {
+            @include size(auto, 116px);
+            @include reset-position;
+            flex-shrink: 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        @include mobile {
+            @include size(105px);
+            padding: 0;
+        }
+
+        img {
+            @include mobile {
+                height: fit-content;
+            }
+        }
+
+        &::before {
+            @include absolute(-140px, -195px);
+            @include size(571px, 546px);
+            background: {
+                image: url("data:image/svg+xml,%3Csvg width='571' height='546' viewBox='0 0 571 546' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Crect width='571' height='545' transform='translate(0 0.348145)' fill='url(%23pattern0_6305_1022)'/%3E%3Cdefs%3E%3Cpattern id='pattern0_6305_1022' patternContentUnits='objectBoundingBox' width='1' height='1'%3E%3Cuse xlink:href='%23image0_6305_1022' transform='matrix(0.00157951 0 0 0.00165486 -9.19339e-09 0.00133832)'/%3E%3C/pattern%3E%3Cimage id='image0_6305_1022' width='632' height='603' xlink:href='data:image/png;base64,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'/%3E%3C/defs%3E%3C/svg%3E%0A");
+                repeat: no-repeat;
+                size: cover;
+            };
+            content: '';
+            z-index: -1;
+
+            @include tablet {
+                @include absolute(-87px, -132px);
+                @include size(355px, 340px);
+            }
+
+            @include mobile {
+                @include absolute(-70px, -120px);
+                @include size(320px, 306px);
+            }
+        }
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        gap: 40px 0;
+        max-width: 420px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0;
+    }
+
+    &__title {
+        @include font(var(--typo-1), 40px, var(--fw-black));
+        color: var(--color-purple);
+        line-height: normal;
+        text-transform: capitalize;
+
+        @include mobile {
+            font-size: 32px;
+        }
+    }
+
+    &__descr {
+        @include font(var(--typo-1), 15px, var(--fw-black));
+        color: var(--color-grey);
+    }
+
+    &__buttons {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+}

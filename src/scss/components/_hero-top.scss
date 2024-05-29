@@ -1,0 +1,21 @@
+.hero-top {
+    margin-top: 120px;
+
+    @include tablet {
+        margin-top: 60px;
+    }
+
+    &__wrapper {
+        @include flex-v-center;
+        flex-direction: column;
+        gap: 35px 0;
+    }
+
+    &__image {
+        transform: translateX(20px);
+    }
+
+    .title {
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,4 @@
+.paragraph {
+    @include font(var(--typo-1), 15px, var(--fw-black));
+    color: var(--color-grey);
+}
